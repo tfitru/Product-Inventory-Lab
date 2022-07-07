@@ -85,6 +85,30 @@ public class RunningShoesTest {
 
 
     }
+
+    @Test
+    public void constructorTest() {
+        // Given
+
+        int expectedId = 6;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        Double expectedSize = 9.5;
+        Integer expectedQty = 10;
+        Float expectedPrice = 80.00f;
+
+        // When
+        RunningShoes testShoes = new RunningShoes(expectedId,expectedName, expectedBrand, expectedSize, expectedQty,expectedPrice);
+
+
+        // Then
+        Assertions.assertEquals(expectedId, testShoes.getId());
+        Assertions.assertEquals(expectedName, testShoes.getName());
+        Assertions.assertEquals(expectedBrand, testShoes.getBrand());
+        Assertions.assertEquals(expectedSize, testShoes.getSize());
+        Assertions.assertEquals(expectedQty, testShoes.getQty());
+        Assertions.assertEquals(expectedPrice, testShoes.getPrice());
+    }
     
 
 }

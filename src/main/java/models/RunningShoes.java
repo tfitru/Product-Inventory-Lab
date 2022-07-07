@@ -11,7 +11,18 @@ public class RunningShoes {
 
 
 
+    public RunningShoes(Integer id, String name, String brand, Double size, Integer qty, Float price) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.size = size;
+        this.qty = qty;
+        this.price = price;
+    }
 
+    public RunningShoes() {
+
+    }
 
     public void setName(String name){
         this.name=name;
@@ -53,6 +64,10 @@ public class RunningShoes {
 
     public Float getPrice() {
         return this.price;
+    }
+
+    public Integer getId() {
+        return this.id;
     }
 
 
