@@ -4,7 +4,7 @@ public class RunningShoes {
     private int id;
     private String name;
     private String brand;
-    private int size;
+    private double size;
     private int qty;
     private float price;
 
@@ -27,11 +27,11 @@ public class RunningShoes {
         return this.brand;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Double size) {
         this.size = size;
     }
 
-    public Integer getSize() {
+    public Double getSize() {
         return this.size;
     }
 
