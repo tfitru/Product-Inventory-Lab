@@ -17,8 +17,7 @@ public class RunningShoesTest {
         Assertions.assertEquals(expected, nameTest.getName());
     }
 
-<<<<<<< HEAD
-=======
+
     @Test
     public void setBrand() {
         // Given
@@ -87,5 +86,5 @@ public class RunningShoesTest {
 
     }
     
->>>>>>> features-sneaker-properties
+
 }

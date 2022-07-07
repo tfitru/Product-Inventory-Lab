@@ -10,6 +10,9 @@ public class RunningShoes {
 
 
 
+
+
+
     public void setName(String name){
         this.name=name;
     }
