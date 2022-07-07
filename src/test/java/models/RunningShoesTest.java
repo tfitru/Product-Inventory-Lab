@@ -16,4 +16,5 @@ public class RunningShoesTest {
         // Then
         Assertions.assertEquals(expected, nameTest.getName());
     }
+
 }
