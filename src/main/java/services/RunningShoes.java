@@ -6,27 +6,35 @@ import java.util.List;
 public class RunningShoes {
     private static int nextId = 1; // (1)
 
+    models.RunningShoes run = new models.RunningShoes();
+
     private List<models.RunningShoes> inventory = new ArrayList<>();
 
-    public models.RunningShoes create(Integer id, String name, String brand, double size, Integer quantity, float price) {
+    public models.RunningShoes create( String name, String brand, Double size, Integer qty, Float price) {
+        models.RunningShoes createdRunningShoes = new models.RunningShoes(nextId++, name, brand, size, qty, price);
+        inventory.add(createdRunningShoes);
 
-        models.RunningShoes createdShoes = new models.RunningShoes(nextId++, name, brand, size, quantity, price);
-
-        inventory.add(createdShoes);
-
-
-        return createdShoes;
+        return createdRunningShoes;
     }
 
     // read
-    public RunningShoes findRunningShoes(int id) {
-        for(int i = 0; i<inventory.size(); i++){
-            if(inventory.get(i).equals(id)){
-                return inventory.get(i).getId();
-            }
-        }
 
-        return null;
+    public models.RunningShoes findRunningShoes(int id){
+        return inventory.get(id);
+    }
+
+    public models.RunningShoes[] findAll() {
+        models.RunningShoes[] x = new models.RunningShoes[inventory.size()];
+        x = inventory.toArray(x);
+        return x;
+    }
+
+
+    public boolean delete(int id) {
+        if(inventory.contains(inventory.get(id))){
+            return true;
+        } else
+            return false;
     }
 
 

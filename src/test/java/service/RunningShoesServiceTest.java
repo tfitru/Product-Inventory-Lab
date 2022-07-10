@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import services.RunningShoes;
 
+import java.util.Arrays;
+
 public class RunningShoesServiceTest {
 
     @Test
@@ -48,5 +50,76 @@ public class RunningShoesServiceTest {
     }
 
 
+    @Test
+    public void findRunningShoes(){
+        // Given
+        Integer integerExpectedId = 0;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        double expectedSize = 10.5;
+        Integer expectedQty = 10;
+        float expectedPrice = 50.00F;
+        RunningShoes inventory = new RunningShoes();
+        models.RunningShoes inventoryTest = new models.RunningShoes(integerExpectedId, expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+        inventory.create(expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+
+
+        // When
+        inventory.findRunningShoes(0);
+        System.out.println(inventory.findRunningShoes(0));
+
+        // Then
+        Assertions.assertEquals(integerExpectedId, 0);
+
+    }
+
+
+    @Test
+    public void findAllTest() {
+        // Given
+        Integer integerExpectedId = 0;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        double expectedSize = 10.5;
+        Integer expectedQty = 10;
+        float expectedPrice = 50.00F;
+        RunningShoes inventory = new RunningShoes();
+        models.RunningShoes inventoryTest = new models.RunningShoes(integerExpectedId, expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+        inventory.create(expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+
+        // When
+        inventory.findAll();
+
+
+
+
+        // Then
+        Assertions.assertEquals(Arrays.toString(inventory.findAll()), Arrays.toString(inventory.findAll()));
+        System.out.println(Arrays.toString(inventory.findAll()));
+
+    }
+
+    @Test
+    public void deleteTest() {
+        // Given
+        Integer integerExpectedId = 0;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Adidas";
+        double expectedSize = 10.5;
+        Integer expectedQty = 10;
+        float expectedPrice = 50.00F;
+        RunningShoes inventory = new RunningShoes();
+        models.RunningShoes inventoryTest = new models.RunningShoes(integerExpectedId, expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+        inventory.create(expectedName, expectedBrand, expectedSize, expectedQty, expectedPrice);
+
+
+        // When
+        inventory.delete(0);
+
+
+
+        // Then
+        Assertions.assertTrue(inventory.delete(0));
+    }
 
 }
